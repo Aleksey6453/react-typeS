@@ -1,19 +1,19 @@
+import { create } from 'domain';
 import React, {useState, useContext} from 'react';
-import { useProducts } from './hooks/products';
-import Test from './components/Test';
-import TestHooks from './components/TestHooks';
-import TestHooks2 from './components/TestHooks2';
+import {createElement as cE} from 'react';
+
+
+
 
 
 function App() {
-  const {loading, error, products} = useProducts()
  
   return (
-      <div>
-        <TestHooks />
-        <TestHooks2 /> 
+      <div className='main_test'>
+          <h2>34</h2>  
       </div>
   )
+
 }
 
 export default App;
