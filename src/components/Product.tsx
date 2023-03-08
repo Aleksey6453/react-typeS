@@ -8,6 +8,7 @@ interface ProductProps {
 const Product = ({product}: ProductProps) => {
 
   const [show, setShow] = useState(false)
+  const [opasity, setOpasity] = useState(false)
     
   return (
     <div className='cart'>
@@ -16,8 +17,10 @@ const Product = ({product}: ProductProps) => {
       <img src={product.image} alt="img" className='img_test'/>
       <p>{product.category}</p>
       <h3><b>{product.price}</b></h3>
-      <button className="btn" onClick={()=>setShow(prev=>!prev)}>{show ? "Hide" : "Show"}</button>
+      <button className='btn' onClick={()=>setShow(prev=>!prev)}>{show ? "Hide" : "Show"}</button>
       {show && <p>{product.description}</p>}
+      <p> Rate: <span style={{fontWeight:'bold'}}>{product.rating.rate}</span>  </p>
+      
     </div>
   )
 }

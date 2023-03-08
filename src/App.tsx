@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Product from './components/Product';
 import {products} from './data/products'
 
 
 function App() {
+
+  async function fetchProducts() {
+    
+  }
+
+  useEffect(()=>{
+    console.log('effect')
+  }, [])
  
   return (
       <div className='main_test'>
-          <Product product={products[1]} />
-          <Product product={products[0]} /> 
+
+          {products.map(product => <Product product={product} key={product.id} />)}
+
       </div>
   )
 
