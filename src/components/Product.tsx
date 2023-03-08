@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IProduct } from '../models'
 
 interface ProductProps {
@@ -6,13 +6,18 @@ interface ProductProps {
 }
 
 const Product = ({product}: ProductProps) => {
+
+  const [show, setShow] = useState(false)
     
   return (
-    <div>
-      <h1>Product!</h1>
-      {product.title}
-      <img src="{product.image}" alt="img" className='img_test'/>
-      <p>{product.title}</p>
+    <div className='cart'>
+      <h3>{product.title}</h3>
+      <br />
+      <img src={product.image} alt="img" className='img_test'/>
+      <p>{product.category}</p>
+      <h3><b>{product.price}</b></h3>
+      <button className="btn" onClick={()=>setShow(prev=>!prev)}>{show ? "Hide" : "Show"}</button>
+      {show && <p>{product.description}</p>}
     </div>
   )
 }

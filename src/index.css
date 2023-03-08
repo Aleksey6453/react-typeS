@@ -32,7 +32,54 @@ code {
 }
 
 .img_test{
-  width: 200px;
+  width: 100px;
 }
+
+.cart{
+  width: 70%;
+  padding: 25px;
+  background-color: #14D888;
+  border:2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: black;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Century Gothic;
+  font-weight: 700;
+  color:lime;
+  margin: 20px;
+}
+.btn:hover {
+    text-decoration: none;
+    transition: all .8s;
+    font-weight: bolder;
+    border: 3px solid black;
+    color: black;
+    background-color: lime;
+}
+.btn:active {
+  background-color: lime;
+  border-radius: 15px;
+}
+
 
 
