@@ -86,12 +86,36 @@ code {
 }
 
 .form {
+  min-width: 400px;
+  min-height: 300px;
   padding: 20px;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: #00FFA9;
   margin: 30px;
+  opacity: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.modal-window {
+  position: fixed;
+  background-color: black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+
+
 
 
 

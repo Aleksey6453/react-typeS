@@ -3,9 +3,15 @@ import CreateForm from './CreateForm'
 
 const Modal = () => {
   return (
-    <div>
-      <CreateForm />
-    </div>
+    <>
+      <div className='modal-window'>
+        <div className='form'>
+          <h2>Modal</h2>
+        </div>
+      </div>
+    
+    </>
+   
   )
 }
 
