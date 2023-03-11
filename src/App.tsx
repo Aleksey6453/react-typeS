@@ -1,37 +1,18 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import Product from './components/Product';
-// import {products} from './data/products'
-import {IProduct} from './models'
-import { AxiosError } from 'axios';
+import { useProducts } from './hooks/productsList';
+import Loader from './components/Loader';
+import ErrorMess from './components/ErrorMess';
+import Modal from './components/Modal';
 
 
 function App() {
-  const [products, setProducts] = useState<IProduct[]>([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-
-  async function fetchProducts() {
-    try{
-      setLoading(true)
-      const response = await axios.get<IProduct[]>("https://fakestoreapi.com/products?limit=5")
-      setProducts(response.data)
-      setLoading(false)
-    } catch(e: unknown){
-      const error = e as AxiosError
-      setLoading(false)
-      setError(error.message)
-    } 
-  }
-
-  useEffect(()=>{
-    fetchProducts()
-  }, [])
+  const {loading, products, error} = useProducts()
  
   return (
       <div className='main_test'>
-          {loading && <p>Loading...</p>}
-          {error && <p style= {{color: 'red', fontSize:'50px'}}>{ error }</p>}
+          {loading && <Loader />}
+          {error && <ErrorMess error={error}/> }
+          <Modal />
           {products.map(product => <Product product={product} key={product.id} />)}
 
       </div>

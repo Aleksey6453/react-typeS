@@ -85,5 +85,13 @@ code {
   opacity: 0.5;
 }
 
+.form {
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #00FFA9;
+  margin: 30px;
+}
+
 
 
