@@ -24,6 +24,7 @@ function App() {
           { modal && <Modal title='Create new product' onClose={()=>{setModal(false)}}>
             <CreateForm onCreate={createHandler} />
           </Modal>}
+          <button className='btn add_modal' onClick={()=>{setModal(true)}}>+</button>
           {products.map(product => <Product product={product} key={product.id} />)}
 
       </div>

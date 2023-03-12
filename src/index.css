@@ -115,7 +115,12 @@ code {
   align-items: flex-start;
   justify-content: flex-start;
   z-index: 1;
+}
 
+.add_modal{
+  position: fixed;
+  top: 50px;
+  right: 50px;
 }
 
 
