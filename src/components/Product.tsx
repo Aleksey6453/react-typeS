@@ -19,7 +19,7 @@ const Product = ({product}: ProductProps) => {
       <h3><b>{product.price}</b></h3>
       <button className='btn' onClick={()=>setShow(prev=>!prev)}>{show ? "Hide" : "Show"}</button>
       {show && <p>{product.description}</p>}
-      <p> Rate: <span style={{fontWeight:'bold'}}>{product.rating.rate}</span>  </p>
+      <p> Rate: <span style={{fontWeight:'bold'}}>{product?.rating?.rate}</span>  </p>
       
     </div>
   )

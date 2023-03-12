@@ -15,7 +15,11 @@ const productData:  IProduct = {
     }
 }
 
-const CreateForm = () => {
+interface CreateProductProps{
+  onCreate: (product: IProduct) => void
+}
+
+const CreateForm = ({onCreate}:CreateProductProps) => {
   const [value, setValue] = useState('')
   const [error, setError] = useState('')
 
@@ -29,6 +33,8 @@ const CreateForm = () => {
 
     productData.title = value
     const responce = await axios.post<IProduct>('https://fakestoreapi.com/products', productData)
+
+    onCreate(responce.data)
   }
   // const changeHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
   //   setValue(event.target.value)

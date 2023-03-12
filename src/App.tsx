@@ -5,19 +5,25 @@ import ErrorMess from './components/ErrorMess';
 import Modal from './components/Modal';
 import CreateForm from './components/CreateForm';
 import { useState } from 'react';
+import { IProduct } from './models';
 
 
 function App() {
-  const {loading, products, error} = useProducts()
+  const {loading, products, error, addProduct} = useProducts()
   const [modal, setModal] = useState(true)
+
+  const createHandler = (product:IProduct)=>{
+    setModal(false)
+    addProduct(product)
+  }
  
   return (
       <div className='main_test'>
           {loading && <Loader />}
           {error && <ErrorMess error={error}/> }
-          <Modal title='Create new product'>
-            <CreateForm />
-          </Modal>
+          { modal && <Modal title='Create new product'>
+            <CreateForm onCreate={createHandler} />
+          </Modal>}
           {products.map(product => <Product product={product} key={product.id} />)}
 
       </div>
