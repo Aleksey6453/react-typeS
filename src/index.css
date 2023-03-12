@@ -38,13 +38,14 @@ code {
 .cart{
   width: 70%;
   padding: 25px;
-  background-color: #14D888;
+  background-color: white;
   border:2px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  border-radius: 15px;
 }
 
 .btn {
@@ -65,7 +66,7 @@ code {
   text-transform: uppercase;
   font-family: Century Gothic;
   font-weight: 700;
-  color:lime;
+  color:#65FFD4;
   margin: 20px;
 }
 .btn:hover {
@@ -74,7 +75,7 @@ code {
     font-weight: bolder;
     border: 3px solid black;
     color: black;
-    background-color: lime;
+    background-color: #65FFD4;
 }
 .btn:active {
   background-color: lime;
@@ -119,8 +120,8 @@ code {
 
 .add_modal{
   position: fixed;
-  top: 50px;
-  right: 50px;
+  top: 5px;
+  right: 5px;
 }
 
 

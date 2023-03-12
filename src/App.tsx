@@ -4,16 +4,17 @@ import Loader from './components/Loader';
 import ErrorMess from './components/ErrorMess';
 import Modal from './components/Modal';
 import CreateForm from './components/CreateForm';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { IProduct } from './models';
+import { ModalContext } from './context/ModalContext';
 
 
 function App() {
   const {loading, products, error, addProduct} = useProducts()
-  const [modal, setModal] = useState(true)
+  const {modal, open, close} = useContext(ModalContext)
 
   const createHandler = (product:IProduct)=>{
-    setModal(false)
+    close()
     addProduct(product)
   }
  
@@ -21,10 +22,10 @@ function App() {
       <div className='main_test'>
           {loading && <Loader />}
           {error && <ErrorMess error={error}/> }
-          { modal && <Modal title='Create new product' onClose={()=>{setModal(false)}}>
+          { modal && <Modal title='Create new product' onClose={close}>
             <CreateForm onCreate={createHandler} />
           </Modal>}
-          <button className='btn add_modal' onClick={()=>{setModal(true)}}>+</button>
+          <button className='btn add_modal' onClick={open}>new form</button>
           {products.map(product => <Product product={product} key={product.id} />)}
 
       </div>
