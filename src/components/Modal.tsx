@@ -4,12 +4,13 @@ import CreateForm from './CreateForm'
 interface ModalProps {
   children: React.ReactNode
   title: string
+  onClose: () => void
 }
 
-const Modal = ({children, title} : ModalProps) => {
+const Modal = ({children, title, onClose} : ModalProps) => {
   return (
     <>
-      <div className='modal-window'>
+      <div className='modal-window' onClick={onClose}>
        
       </div>
       <div className='form'>

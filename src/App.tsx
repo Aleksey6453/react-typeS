@@ -21,7 +21,7 @@ function App() {
       <div className='main_test'>
           {loading && <Loader />}
           {error && <ErrorMess error={error}/> }
-          { modal && <Modal title='Create new product'>
+          { modal && <Modal title='Create new product' onClose={()=>{setModal(false)}}>
             <CreateForm onCreate={createHandler} />
           </Modal>}
           {products.map(product => <Product product={product} key={product.id} />)}
